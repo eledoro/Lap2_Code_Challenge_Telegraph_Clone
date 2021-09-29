@@ -12,13 +12,13 @@ async function show(req, res) {
     }
 }
 
-// async function create(req, res) {
-//     try {
-//         const blogPost = await Blog.create(req.body);
-//         res.status(201).json(blogPost)
-//     } catch (err) {
-//         res.status(422).json({err})
-//     }
-// }
+async function create(req, res) {
+    try {
+        const blogPost = await Blog.form(req.body.title, req.body.date, req.body.name, req.body.message);
+        res.status(201).json(blogPost)
+    } catch (err) {
+        res.status(422).json({err})
+    }
+}
 
-module.exports = { show/*, create*/ } 
+module.exports = { show, create } 

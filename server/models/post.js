@@ -23,6 +23,21 @@ class Blog {
             }
         });
     }
+
+    static form(title, date, name, message){
+        return new Promise (async (resolve, reject) => {
+            try {
+                const db = await init();
+                let blogData = await db.collection('blogs').insertOne({ title, date, name, message });
+                let newBlog = new Blog(blogData.ops[0]);
+                resolve (newBlog);
+            } catch (err) {
+                console.log(err)
+                reject('Could not make post');
+            }
+        });
+}
+
 }
 
 module.exports = Blog
