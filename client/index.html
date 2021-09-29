@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts/script.js"></script>
+    <script src="scripts/index.js"></script>
+    
     <title>Document</title>
 </head>
 <body>
-    <section id="formSection" class="initSection">
+    <section id="formSection" class="inputSection">
     <form id="newPostForm">
       <label for="title"></label><br>
       <input type="text" id="title" name="title" placeholder="Title"><br>
@@ -17,15 +18,27 @@
       <label for="username"></label><br>
       <input type="text" id="username" name="username" placeholder="Your name"><br>
 
-      <label for="story"></label><br>
+      <label for="message"></label><br>
       <input type="text" id="message" name="message" placeholder="Your story..."><br>
+      
+      <input type="submit" value="Publish" id="publisBtn" form="newPostForm">
+      <p id="warning"></p>
     </form>
   </section>
 
-  <section id="btnSection" class="initSection">
-    <input type="submit" value="Publish" id="publisBtn" form="newPostForm">
-    <p id="warning"></p>
+  
+
+
+  <section id="showPost" class="showPostSection">
+    <p class="post" id="postTitle"></p>
+    <p class="post" id="postUsername"></p>
+    <p class="post" id="postMessage"></p>
+    <p class="post" id="postDdate"></p>
   </section>
+
+  <section id="showPath" class="showPostSection">
+     <p id="pathBox" class="showPath"></p>   
+ </section>
 
 
 </body>
