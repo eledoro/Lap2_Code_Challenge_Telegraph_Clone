@@ -10,13 +10,12 @@
 
 ## Installation & Usage
 
-### Installation
+*  Clone the repo and run docker-compose up
+* to stop and keep data docker-compose down
 
-* 
-* 
+## Challenges
+ 
+ - still need to connect API to frontend and fix the bugs
 
 
-### Usage
 
-* 
-*

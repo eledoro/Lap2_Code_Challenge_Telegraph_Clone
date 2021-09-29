@@ -1,6 +1,19 @@
 version: '3'
 services:
-  server:
+   client:
+        container_name: telegraph_client_1
+        build: ./client
+        image: telegraph-client
+        ports:
+          - 8080:8080
+        working_dir: /code
+        volumes:
+          - type: bind
+            source: ./client
+            target: /code
+        command: ["http-server"]
+
+   server:
     image: node:12.18.4
     working_dir: /code
     ports: 
@@ -16,7 +29,7 @@ services:
         target: /code
     command: bash -c "npm install && npm start"
 
-  db:
+   db:
     image: mongo:latest
     volumes:
       - "dbdata:/var/lib/mongodb/data"
