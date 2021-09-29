@@ -33,7 +33,7 @@ services:
     image: mongo:latest
     volumes:
       - "dbdata:/var/lib/mongodb/data"
-      - "./db/seeds.js:/docker-entrypoint-initdb.d/seeds.js:ro"
+      - "./server/db/seeds.js:/docker-entrypoint-initdb.d/seeds.js:ro"
     environment: 
       - MONGO_INITDB_ROOT_USERNAME=futureproof
       - MONGO_INITDB_DATABASE=telegraph
